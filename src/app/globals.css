@@ -1,26 +1,273 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ------------------------------------------------------------------
+   Design tokens extracted from the Figma reference (MacBook Pro 16" frames)
+   ------------------------------------------------------------------ */
+@theme {
+  /* Space / sky palette */
+  --color-space-950: #07040f;
+  --color-space-900: #0d0620;
+  --color-space-800: #1a0f3a;
+  --color-space-700: #2b1660;
+  --color-space-600: #3a1f7a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Lavender text & line system */
+  --color-lavender-50: #f4eeff;
+  --color-lavender-100: #e9ddff;
+  --color-lavender-200: #d9c8ff;
+  --color-lavender-300: #c9b3ff;
+  --color-lavender-400: #b48cff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Neon glow */
+  --color-neon-500: #a66bff;
+  --color-neon-600: #8a4dff;
+
+  /* Dark glyph colour used inside the social tiles */
+  --color-ink-900: #1b1033;
+
+  /* Planet & accents */
+  --color-planet-400: #38c8ff;
+  --color-planet-600: #1f7bff;
+  --color-accent-pink: #ff4fa3;
+  --color-accent-yellow: #f2e24a;
+
+  /* Typography */
+  --font-display: var(--font-audiowide), "Audiowide", "Orbitron", sans-serif;
+  --font-condensed: var(--font-bebas), "Bebas Neue", "Oswald", sans-serif;
+  --font-body: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-neon: 0 0 8px rgba(180, 140, 255, 0.85), 0 0 22px rgba(138, 77, 255, 0.55);
+  --shadow-neon-soft: 0 0 10px rgba(201, 179, 255, 0.55), 0 0 24px rgba(138, 77, 255, 0.3);
+  --shadow-tile: 0 0 14px rgba(201, 179, 255, 0.45);
+
+  /* Radii */
+  --radius-tile: 10px;
+  --radius-bar: 2px;
+
+  /* Animations */
+  --animate-slide-in: slide-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-panel-in: panel-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-flicker: flicker 6s linear infinite;
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes panel-in {
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes flicker {
+    0%, 97%, 100% { opacity: 1; }
+    98% { opacity: 0.82; }
+    99% { opacity: 0.95; }
   }
 }
 
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html {
+  background: var(--color-space-950);
+  color: #fff;
+  color-scheme: dark;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background: var(--color-space-950);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(166, 107, 255, 0.55);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------
+   Neon type utilities
+   ------------------------------------------------------------------ */
+
+/* Outlined neon display text ("I AM JAY", "CLICK TO OPEN", MY PROJECTS) */
+@utility neon-outline {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(226, 212, 255, 0.5);
+  -webkit-text-stroke: 1.5px #e3d6ff;
+  paint-order: stroke fill;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(180, 140, 255, 0.95),
+    0 0 18px rgba(138, 77, 255, 0.85),
+    0 0 40px rgba(138, 77, 255, 0.55);
+}
+
+/* Small display labels ("A MESSAGE FROM EARTH") */
+@utility neon-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #d9c8ff;
+  text-shadow: 0 0 6px rgba(180, 140, 255, 0.9), 0 0 14px rgba(138, 77, 255, 0.6);
+}
+
+/* Solid condensed titles with a soft lavender halo ("PROJECT1 : DOC-UDI") */
+@utility neon-solid {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-shadow:
+    0 0 6px rgba(201, 179, 255, 0.9),
+    0 0 16px rgba(166, 107, 255, 0.75),
+    0 0 32px rgba(138, 77, 255, 0.45);
+}
+
+/* Corner nav labels ("CONTACT ME", "PRESS", "SCROLL") */
+@utility nav-label {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #e3d6ff;
+  text-shadow: 0 0 10px rgba(166, 107, 255, 0.55);
+}
+
+/* Glowing lavender line used above and below headings */
+@utility neon-bar {
+  height: 9px;
+  border: 2px solid var(--color-lavender-300);
+  border-radius: var(--radius-bar);
+  box-shadow: var(--shadow-neon-soft), inset 0 0 6px rgba(201, 179, 255, 0.35);
+}
+
+/* Translucent framed panel used for every "open" state */
+@utility neon-panel {
+  position: relative;
+  border: 2px solid rgba(214, 196, 255, 0.9);
+  background: rgba(196, 176, 255, 0.22);
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-neon-soft), inset 0 0 24px rgba(201, 179, 255, 0.12);
+}
+
+/* Square tile used for skills / credentials grids */
+@utility neon-tile {
+  border: 2px solid var(--color-lavender-300);
+  background: rgba(10, 5, 25, 0.32);
+  box-shadow: var(--shadow-tile), inset 0 0 10px rgba(201, 179, 255, 0.12);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Social tile (56 x 56 lavender rounded square with dark glyph) */
+@utility social-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-tile);
+  background: var(--color-lavender-300);
+  color: var(--color-ink-900);
+  box-shadow: 0 0 14px rgba(201, 179, 255, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* L-shaped bracket corners */
+@utility bracket-tl {
+  position: absolute;
+  width: 64px;
+  height: 48px;
+  border-top: 3px solid #e3d6ff;
+  border-left: 3px solid #e3d6ff;
+  filter: drop-shadow(0 0 6px rgba(180, 140, 255, 0.9));
+}
+@utility bracket-br {
+  position: absolute;
+  width: 64px;
+  height: 48px;
+  border-bottom: 3px solid #e3d6ff;
+  border-right: 3px solid #e3d6ff;
+  filter: drop-shadow(0 0 6px rgba(180, 140, 255, 0.9));
+}
+
+/* Hide scrollbars inside the deck without disabling scroll */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* Thin lavender scrollbar for panels */
+@utility scrollbar-neon {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 179, 255, 0.6) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Astronaut mini-game layers (values driven from GameProvider)
+   ------------------------------------------------------------------ */
+:root {
+  --globe-angle: 0deg;
+  --astro-y: 0;
+  --astro-face: 1;
+  --astro-active: 0;
+}
+
+.astro-motion {
+  transform: translateY(calc(var(--astro-y) * var(--s, 1) * 1px));
+  animation: astro-float 3.6s ease-in-out infinite;
+  will-change: transform;
+}
+:root[data-astro-walking="1"] .astro-motion {
+  animation: astro-walk 0.36s ease-in-out infinite;
+}
+:root[data-astro-air="1"] .astro-motion {
+  animation: none;
+  rotate: 0deg;
+}
+.astro-face {
+  transform: scaleX(var(--astro-face));
+  transform-origin: 50% 100%;
+}
+:root[data-astro-bump="1"] .astro-face {
+  animation: astro-bump 0.5s ease-out;
+}
+.astro-idle {
+  opacity: calc(1 - var(--astro-active));
+}
+.astro-live {
+  opacity: var(--astro-active);
+}
+
+@keyframes astro-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+@keyframes astro-walk {
+  0%, 100% { translate: 0 0; rotate: -4deg; }
+  50% { translate: 0 -5px; rotate: 4deg; }
+}
+@keyframes astro-bump {
+  0% { translate: 0 0; }
+  20% { translate: 6px 0; }
+  40% { translate: -6px 0; }
+  60% { translate: 4px 0; }
+  80% { translate: -2px 0; }
+  100% { translate: 0 0; }
 }

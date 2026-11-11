@@ -1,0 +1,234 @@
+{
+  "autobiz-smartplan": [
+    {
+      "src": "/projects/autobiz-smartplan/01-1.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "1"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/02-2.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "2"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/03-3.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "3"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/04-4.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "4"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/05-5.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "5"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/06-6.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "6"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/07-7.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "7"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/08-8.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "8"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/09-9.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "9"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/10-10.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "10"
+    },
+    {
+      "src": "/projects/autobiz-smartplan/11-11.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "11"
+    }
+  ],
+  "autobiz-app": [
+    {
+      "src": "/projects/autobiz-app/01-marketplace-projects.webp",
+      "width": 1540,
+      "height": 1448,
+      "alt": "Marketplace projects"
+    },
+    {
+      "src": "/projects/autobiz-app/02-landing-page.webp",
+      "width": 900,
+      "height": 4598,
+      "alt": "Landing page"
+    }
+  ],
+  "pmc-sms": [
+    {
+      "src": "/projects/pmc-sms/01-admin.webp",
+      "width": 1600,
+      "height": 1011,
+      "alt": "Admin"
+    },
+    {
+      "src": "/projects/pmc-sms/02-manage-members.webp",
+      "width": 1600,
+      "height": 1011,
+      "alt": "Manage members"
+    }
+  ],
+  "sme-cloud": [
+    {
+      "src": "/projects/sme-cloud/01-desktop-9.webp",
+      "width": 1440,
+      "height": 1137,
+      "alt": "Desktop - 9"
+    },
+    {
+      "src": "/projects/sme-cloud/02-desktop-30.webp",
+      "width": 1440,
+      "height": 1024,
+      "alt": "Desktop - 30"
+    },
+    {
+      "src": "/projects/sme-cloud/03-desktop-18.webp",
+      "width": 1440,
+      "height": 1024,
+      "alt": "Desktop - 18"
+    },
+    {
+      "src": "/projects/sme-cloud/04-desktop-41.webp",
+      "width": 1440,
+      "height": 1024,
+      "alt": "Desktop - 41"
+    },
+    {
+      "src": "/projects/sme-cloud/05-iphone-13-mini-20.webp",
+      "width": 375,
+      "height": 812,
+      "alt": "iPhone 13 mini - 20"
+    },
+    {
+      "src": "/projects/sme-cloud/06-iphone-13-mini-31.webp",
+      "width": 375,
+      "height": 812,
+      "alt": "iPhone 13 mini - 31"
+    },
+    {
+      "src": "/projects/sme-cloud/07-iphone-13-mini-32.webp",
+      "width": 375,
+      "height": 1464,
+      "alt": "iPhone 13 mini - 32"
+    },
+    {
+      "src": "/projects/sme-cloud/08-desktop-1.webp",
+      "width": 900,
+      "height": 5653,
+      "alt": "Desktop - 1"
+    }
+  ],
+  "sage": [
+    {
+      "src": "/projects/sage/01-sign-in.webp",
+      "width": 1440,
+      "height": 960,
+      "alt": "Sign In"
+    },
+    {
+      "src": "/projects/sage/02-inventory.webp",
+      "width": 1440,
+      "height": 1098,
+      "alt": "Inventory"
+    },
+    {
+      "src": "/projects/sage/03-fraud-detection.webp",
+      "width": 900,
+      "height": 946,
+      "alt": "Fraud Detection"
+    }
+  ],
+  "tekkas-azar": [
+    {
+      "src": "/projects/tekkas-azar/01-azar-page-1.webp",
+      "width": 900,
+      "height": 1483,
+      "alt": "Azar Page (1)"
+    },
+    {
+      "src": "/projects/tekkas-azar/02-iphone-16-pro-max-272.webp",
+      "width": 440,
+      "height": 956,
+      "alt": "iPhone 16 Pro Max - 272"
+    },
+    {
+      "src": "/projects/tekkas-azar/03-iphone-16-pro-max-174.webp",
+      "width": 900,
+      "height": 2950,
+      "alt": "iPhone 16 Pro Max - 174"
+    }
+  ],
+  "the-move": [
+    {
+      "src": "/projects/the-move/01-iphone-14-15-pro-max-1.webp",
+      "width": 430,
+      "height": 932,
+      "alt": "iPhone 14  15 Pro Max - 1"
+    },
+    {
+      "src": "/projects/the-move/02-iphone-14-15-pro-max-19.webp",
+      "width": 430,
+      "height": 1152,
+      "alt": "iPhone 14  15 Pro Max - 19"
+    },
+    {
+      "src": "/projects/the-move/03-iphone-14-15-pro-max-15.webp",
+      "width": 430,
+      "height": 1989,
+      "alt": "iPhone 14  15 Pro Max - 15"
+    }
+  ],
+  "tropicmed": [
+    {
+      "src": "/projects/tropicmed/01-log-in.webp",
+      "width": 1600,
+      "height": 1138,
+      "alt": "Log In"
+    },
+    {
+      "src": "/projects/tropicmed/02-doctors-registration.webp",
+      "width": 1600,
+      "height": 1493,
+      "alt": "Doctors Registration"
+    },
+    {
+      "src": "/projects/tropicmed/03-select-user-type.webp",
+      "width": 1600,
+      "height": 1135,
+      "alt": "Select User Type"
+    },
+    {
+      "src": "/projects/tropicmed/04-landing-page.webp",
+      "width": 900,
+      "height": 2300,
+      "alt": "Landing Page"
+    }
+  ]
+}
