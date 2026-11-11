@@ -12,6 +12,7 @@ export function SlideLayout({
   heading,
   title,
   subtitle,
+  note,
   body,
   bodyOpen = false,
   rail = false,
@@ -22,6 +23,8 @@ export function SlideLayout({
   heading: ReactNode;
   title?: ReactNode;
   subtitle?: ReactNode;
+  /** Small instruction line under the subtitle. */
+  note?: ReactNode;
   body: ReactNode;
   bodyOpen?: boolean;
   rail?: boolean;
@@ -34,12 +37,13 @@ export function SlideLayout({
     <div className="relative mx-auto flex min-h-dvh w-full flex-col items-center px-4 pt-[clamp(84px,12vh,140px)] pb-[clamp(28px,6vh,80px)] md:block md:px-0 md:pt-0 md:pb-0">
       <div className="flex w-full justify-center md:absolute md:inset-x-0 md:top-[11.5%]">{heading}</div>
 
-      {(title || subtitle) && (
+      {(title || subtitle || note) && (
         <div
           className={`mt-[clamp(20px,5vh,56px)] flex w-full flex-col items-center gap-[clamp(8px,1.6vh,22px)] px-2 text-center md:absolute md:inset-x-0 md:mt-0 ${titleTop}`}
         >
           {title}
           {subtitle}
+          {note}
         </div>
       )}
 

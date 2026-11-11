@@ -29,7 +29,7 @@ export function ProjectsSection() {
   useCarousel(ID, step);
 
   return (
-    <Scene id={ID} bg="projects" label="Projects">
+    <Scene id={ID} bg="projects" label="Projects" onSwipe={step}>
       <SlideLayout
         bodyOpen={open}
         heading={<NeonHeading text="My projects" />}
@@ -42,9 +42,9 @@ export function ProjectsSection() {
         title={
           <h3 key={project.slug} className="neon-solid animate-slide-in text-[clamp(28px,3.4vw,60px)] leading-none">
             Project {index + 1} : {project.shortName}
-            {project.status === "in-development" && (
+            {(project.personal || project.status === "in-development") && (
               <span className="ml-3 align-middle border border-lavender-300/80 px-2 py-0.5 text-[0.4em] tracking-widest text-lavender-200">
-                Reserved slot
+                {project.personal ? "Personal project" : "In development"}
               </span>
             )}
           </h3>
@@ -89,11 +89,11 @@ export function ProjectsSection() {
                     href={`/projects/${project.slug}`}
                     className="nav-label inline-flex items-center gap-2 border-b-2 border-lavender-300/80 pb-0.5 text-[clamp(16px,1.35vw,24px)] leading-none transition hover:border-white hover:text-white"
                   >
-                    {project.status === "in-development" ? "View GDD outline →" : "Open case study →"}
+                    Open case study →
                   </Link>
                 </div>
                 <div className="flex flex-col gap-3 font-body text-[clamp(13px,1.12vw,20px)] leading-[1.4] text-white">
-                  {project.description.map((p) => (
+                  {(project.caseStudy?.summary ?? project.description).map((p) => (
                     <p key={p.slice(0, 40)}>{p}</p>
                   ))}
                 </div>

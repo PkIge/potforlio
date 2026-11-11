@@ -3,11 +3,7 @@ export type Experience = {
   title: string;
   /** Organisation, product or client. */
   org: string;
-  /**
-   * Human readable period, e.g. "Jan 2024 to Aug 2025". The source content
-   * does not include employment dates, so this is left empty and the
-   * products worked on are shown on that line instead. Fill it in to show dates.
-   */
+  /** Period exactly as recorded in the job history. */
   period?: string;
   /** Short line shown under the title when no period is set. */
   products: string;
@@ -17,88 +13,154 @@ export type Experience = {
   projects?: string[];
 };
 
+/** Real job history, dates copied as recorded; newest first. */
 export const experience: Experience[] = [
   {
-    id: "senior-tpm",
-    title: "Senior Technical Product Manager & AI Product Specialist",
-    org: "Current focus",
-    products: "AI/LLM products · FinTech · Gamification",
+    id: "pedestrian-games",
+    title: "Founder & Managing Director",
+    org: "Pedestrian Games Limited",
+    period: "Jul 2026 – Present",
+    products: "Game development and digital media",
     summary:
-      "Bridging technical product strategy, AI/LLM evaluation and prompt engineering, full-stack prototyping (Next.js, React, SwiftUI), FinTech architecture, and legal and regulatory compliance.",
+      "Founded and registered a game development and digital media company in Ibadan, directing end-to-end product development, technical architecture and cross-functional design, web and media teams.",
     highlights: [
-      "Own product strategy for AI-assisted and LLM-powered features, including evaluation frameworks and prompt engineering.",
-      "Prototype end-to-end experiences in Next.js, React and SwiftUI to de-risk roadmap decisions before engineering investment.",
-      "Design FinTech architecture with compliance and regulatory constraints built in from the start.",
-      "Apply gamification design (loops, progression, rewards) to drive engagement and retention.",
+      "Drafted and executed channel management contracts, intellectual property protections and commercial governance frameworks for digital properties and gaming channels.",
+      "Led content strategy, production workflows and operational scaling across gaming media assets.",
+    ],
+    projects: ["gaming-case-study"],
+  },
+  {
+    id: "kentol",
+    title: "Director & Technical Product Lead",
+    org: "Kentol Limited",
+    period: "2026 – Present",
+    products: "Kentol Table Water · Splash Zone Paintball · Ewagbolahan & Co",
+    summary:
+      "Directed digital transformation, technical architecture and multi-brand web platform development across a group spanning manufacturing, recreation and legal services.",
+    highlights: [
+      "Led cross-functional teams across data science, full-stack engineering and human resources to align subsidiary operations with group-level commercial goals.",
+      "Oversaw corporate governance, regulatory compliance and operational strategy across diverse business units.",
     ],
   },
   {
-    id: "tekkas-growth-pm",
-    title: "Growth Product Manager",
-    org: "Tekkas Store",
-    products: "Azar Payments (BNPL) · Sage operations backend",
+    id: "ai-platforms",
+    title: "AI Data Trainer, Prompt Engineer & Visual Evaluation Specialist",
+    org: "Handshake AI · Outlier · Micro1 · MultiMango",
+    period: "2026 – Present",
+    products: "Enterprise AI model training and evaluation platforms",
     summary:
-      "Built Azar, an embedded flexible payments (BNPL) solution inside Tekkas Store, and redesigned Sage, the admin and operations backend that powers the store and Azar's repayment and eligibility flows.",
+      "Designed complex multi-step prompts, domain-specific legal and technical reasoning tasks, and visual evaluation benchmarks to train and audit large language models.",
     highlights: [
-      "Shaped Azar's structure, positioning and integration: eligibility, repayment flows, gateway connections and compliance-friendly messaging.",
-      "Rebuilt Sage from scratch after inheriting a buggy codebase, prioritising dashboard, customer management, user oversight and reporting.",
-      "Scoped payments, communication and fraud detection modules, balancing product needs, operational efficiency and compliance.",
+      "Applied rubric-based quality assurance standards to evaluate model accuracy, safety and instruction adherence across diverse workflows.",
     ],
-    projects: ["tekkas-azar", "sage"],
   },
   {
-    id: "the-move-pm",
-    title: "Product Manager",
-    org: "The Move & The Move Business",
-    products: "Nightlife discovery app · Venue operations platform",
+    id: "kenkeputa",
+    title: "Legal & Compliance Officer / Growth Product Manager",
+    org: "Kenkeputa",
+    period: "Aug 2024 – Present",
+    products: "The Move & The Move Business (US and Nigeria)",
     summary:
-      "Led a U.S.-based nightlife and entertainment discovery app and its companion platform for venue owners and organisers, from customer research through launch and operations.",
+      "Defined product vision and executed phased go-to-market launches for a B2B SaaS nightlife and events platform across the US and Nigeria, while advising on regulatory, licensing and consumer-protection requirements for each market.",
     highlights: [
-      "Consumer app for finding events, buying tickets, reserving tables and ordering in-venue services.",
-      "Business platform covering profiles, payments, guest entry scanning, promotions and sales tracking.",
-      "Customer research and product launch operations across both sides of the marketplace.",
+      "Partnered with engineering on system-design trade-offs for payments and event discovery; authored product specs balancing feasibility and user value.",
+      "Reviewed API specifications and technical design documents to assess legal and regulatory risk on payment and wallet integrations, and defined compliant acceptance criteria.",
+      "Drafted and reviewed vendor agreements and platform terms governing event creation, ticketing and venue management.",
+      "Monitored adoption and engagement data to flag contractual and compliance risk areas, informing iterative policy updates.",
     ],
     projects: ["the-move"],
   },
   {
     id: "enoverlab",
-    title: "Product Manager & Tutor",
-    org: "EnoverLab",
-    products: "Product management education for Africa",
+    title: "Program Manager, Legal Adviser & Tutor",
+    org: "EnoverLab Training Institute",
+    period: "May 2023 – Present",
+    products: "Product management education in Kenya and Nigeria",
     summary:
-      "Taught and built training programmes at an educational startup nurturing the next generation of product managers, from fundamentals to advanced techniques.",
+      "Built product management curricula for 70+ professionals, mentored product managers, and drafted and reviewed the institute's commercial contracts.",
     highlights: [
-      "Designed and delivered product management curriculum.",
-      "Mentored learners building and managing impactful products.",
+      "Mentored PMs on technical literacy, defining KPIs, running experiments and prioritising effectively.",
+      "Monitored compliance with relevant laws and regulations and collaborated cross-functionally on customer-satisfaction programmes.",
     ],
     projects: ["enoverlab"],
   },
   {
-    id: "platform-pm",
-    title: "Product Manager",
-    org: "Autobiz.app · SME Cloud · Simservers.io · Dalens AI",
-    products: "API marketplace · USSD automation · AgriTech AI",
+    id: "paam",
+    title: "Community Outreach Officer & Digital Product Lead",
+    org: "PAAM Literacy & Vocational Organisation",
+    period: "Aug 2026 – Sept 2026",
+    products: "Community literacy and vocational empowerment, Ekiti State",
     summary:
-      "Managed a portfolio of automation, FinTech and AI platforms: an API marketplace and business management suite, cloud-based USSD and VTU automation, and an AI-driven livestock management startup.",
+      "Coordinated field outreach programmes and stakeholder engagement across Ado-Ekiti, Ijero-Ekiti and Ipoti-Ekiti, and built the organisation's official web platform.",
     highlights: [
-      "Autobiz.app: API marketplace and internal operations platform for developers and business owners.",
-      "SME Cloud and Simservers.io: USSD automation for bulk data purchases, airtime and data top-ups with monitoring and auto-retry.",
-      "Dalens AI: real-time insights and predictive analytics for farm animal care.",
+      "Architected, built and launched the web platform with content management and payment gateway integrations to support donor and programme operations.",
     ],
-    projects: ["autobiz-app", "sme-cloud", "simservers", "dalens-ai"],
   },
   {
     id: "cdlp",
-    title: "Product & Business Strategy Lead",
-    org: "CDLP Hub Limited",
-    products: "Autobiz Smartplan",
+    title: "Compliance & Legal Officer / Product Manager",
+    org: "Concept Delapaix Hub",
+    period: "Apr 2023 – Nov 2024",
+    products: "Payment and wallet integrations · Autobiz Smartplan",
     summary:
-      "Spearheaded the business plan, marketing model and pricing structure for Autobiz Smartplan, a fast website-plus-branding package, and led designers and engineers to deliver it.",
+      "Launched payment solutions for 20+ businesses supporting ₦100M+ in transactions, coordinated a 14-person cross-functional team delivering a B2B SaaS platform, and kept the company compliant with financial and payment regulation.",
     highlights: [
-      "Defined pricing structure and marketing model for the package.",
-      "Coordinated multidisciplinary design and engineering delivery within tight timelines.",
-      "Conceptualised and ran basic advertising campaigns for client launches.",
+      "Partnered with analytics teams to refine APIs and drove market insights into roadmap decisions.",
+      "Designed live-environment testing frameworks to validate new wallet features before scale-up.",
+      "Drafted and amended contractual templates, MOUs and confidentiality agreements.",
     ],
     projects: ["autobiz-smartplan"],
+  },
+  {
+    id: "dalens",
+    title: "Project / Product Manager",
+    org: "Dalens AI",
+    period: "Apr 2021 – Mar 2024",
+    products: "Agricultural AI for livestock care",
+    summary:
+      "Developed product roadmaps and go-to-market strategies across 5 project workstreams from concept to funding close, securing $10K in early-stage funding.",
+    highlights: [
+      "Executed 4 MVP validation cycles and user testing sessions, reducing rework by 25% and cutting launch timelines by 3 weeks.",
+      "Translated customer and market research into iterative product refinements, boosting market penetration, engagement and retention.",
+    ],
+    projects: ["dalens-ai"],
+  },
+  {
+    id: "splash-zone",
+    title: "Co-Founder",
+    org: "Splash Zone Games and Recreations Arena",
+    period: "Sept 2019 – March 2023",
+    products: "Pioneer paintball and VR game centre, South-West Nigeria",
+    summary:
+      "Co-founded the pioneer paintball games arena in South-Western Nigeria, directly responsible for media, construction, legal and import teams.",
+    highlights: [
+      "Achieved company financial goals by about 50% while maintaining a 30% customer growth rate and steady retention.",
+      "Managed day-to-day operations with a 20-person team serving 5,000+ customers, improving customer satisfaction ratings by about 20%.",
+    ],
+  },
+  {
+    id: "ewagbolahan",
+    title: "Head of Chambers",
+    org: "Ewagbolahan & Co Legal Practitioners",
+    period: "Apr 2018 – Dec 2019",
+    products: "Company law practice",
+    summary:
+      "Led a team of lawyers and IT professionals, served as Company Secretary for clients, and ensured compliance with legal documentation, obligations and taxation law.",
+    highlights: [
+      "Led the chambers team in handling complex legal cases, achieving a 95% client satisfaction rate.",
+      "Led the data team to implement analytics tools, enabling data-driven decision-making and better client service delivery.",
+    ],
+  },
+  {
+    id: "bode-elemide",
+    title: "Associate",
+    org: "Bode Elemide & Co",
+    period: "Nov 2016 – Jul 2018",
+    products: "Property and civil litigation",
+    summary:
+      "Represented clients in 50+ complex scenarios and cases, developing and executing legal strategies from case analysis through courtroom presentation.",
+    highlights: [
+      "Cultivated strong client relationships through personalised legal advice, maintaining a 90% client satisfaction rate.",
+    ],
   },
 ];

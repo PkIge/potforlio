@@ -31,7 +31,7 @@ export function ExperienceSection() {
   const related = (role.projects ?? []).map(getProject).filter((p) => p !== undefined);
 
   return (
-    <Scene id={ID} bg="experience" label="Work experience">
+    <Scene id={ID} bg="experience" label="Work experience" onSwipe={step}>
       <SlideLayout
         bodyOpen={open}
         titleTop="md:top-[31.5%]"
@@ -55,6 +55,11 @@ export function ExperienceSection() {
             <span className="ml-3 text-[0.7em] text-lavender-300/70">
               {index + 1} / {count}
             </span>
+          </p>
+        }
+        note={
+          <p className="neon-label text-[clamp(11px,1.05vw,18px)] leading-none">
+            Scroll right for my job history → (press → or swipe)
           </p>
         }
         body={

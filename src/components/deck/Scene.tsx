@@ -3,6 +3,7 @@
 import { useCallback, useRef, type ReactNode } from "react";
 import { SceneGame } from "@/components/game/SceneGame";
 import { useDeck } from "./DeckProvider";
+import { useSwipe } from "./useSwipe";
 
 export type SceneBackground = "hero" | "projects" | "skills" | "experience";
 
@@ -17,15 +18,19 @@ export function Scene({
   children,
   className = "",
   label,
+  onSwipe,
 }: {
   id: string;
   bg: SceneBackground;
   children: ReactNode;
   className?: string;
   label: string;
+  /** When set, horizontal finger swipes and mouse drags call this. */
+  onSwipe?: (dir: "prev" | "next") => void;
 }) {
   const { registerSection } = useDeck();
   const hostRef = useRef<HTMLElement | null>(null);
+  const swipe = useSwipe(onSwipe ?? (() => {}));
   const ref = useCallback(
     (el: HTMLElement | null) => {
       hostRef.current = el;
@@ -42,7 +47,12 @@ export function Scene({
       style={{ backgroundImage: `url(/bg/${bg}.webp)` }}
     >
       <SceneGame scene={bg} hostRef={hostRef} />
-      <div className="relative z-10">{children}</div>
+      <div
+        {...(onSwipe ? swipe.props : {})}
+        className={`relative z-10 ${onSwipe ? "cursor-grab" : ""} ${onSwipe ? (swipe.props.className ?? "") : ""}`}
+      >
+        {children}
+      </div>
     </section>
   );
 }
